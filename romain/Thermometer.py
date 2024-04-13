@@ -3,6 +3,8 @@ from matplotlib import image as mpimg
 from matplotlib.patches import Rectangle
 import random
 
+plt.gcf().set_facecolor('black')
+
 def add_image_with_positions(img_path, img_positions, zorder=0):
     img = mpimg.imread(img_path)
     plt.imshow(img, zorder=zorder)
@@ -12,7 +14,7 @@ def add_image_with_positions(img_path, img_positions, zorder=0):
     return img.shape
 
 # Chargement de l'image du contour
-img_path_background = r'media/amazingcontourpluswhite.png'
+img_path_background = r'media/contourthermometerdarkmode.png'
 background_shape = add_image_with_positions(img_path_background, {}, zorder=2)
 
 # Chargement de l'image du jauge
@@ -37,7 +39,7 @@ for i in range(1, num_graduations):
 # Ajout des graduations sur le graphique
 for graduation, position in graduations_positions.items():
     if graduation in ['0°C', '5°C', '10°C', '15°C', '20°C', '25°C']:
-        plt.text(position[0], position[1], graduation, fontsize=15, ha='center', va='center', color='black')
+        plt.text(position[0], position[1], graduation, fontsize=15, ha='center', va='center', color='white')
 
 # Génération d'une valeur aléatoire initiale
 random_value = random.randint(0, 25)
