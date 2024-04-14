@@ -49,7 +49,7 @@ can_black_icon_position = (200, 300 )  # Définissez la position
 can_black_icon = add_image_with_position(img_path_can_black_icon, can_black_icon_position, zorder=3)
 
 # Réglez la limite des axes pour s'adapter aux images
-plt.xlim(0, 1250)
+plt.xlim(-1, 1250)
 plt.ylim(450, 2000)
 
 # Désactivez les axes et affichez uniquement les images
