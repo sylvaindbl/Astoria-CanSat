@@ -3,6 +3,9 @@ from matplotlib import image as mpimg
 from matplotlib.patches import Rectangle
 import random
 
+plt.gcf().set_facecolor('black')
+
+max_value = 7000
 
 # Fonction pour ajouter une image à une position spécifique
 def add_image_with_position(img_path, position, scale=1.0, zorder=0):
@@ -26,7 +29,7 @@ sun_transparent_position = (300, 400)  # Définissez la position de la tour Eiff
 sun_transparent_image = add_image_with_position(img_path_sun_transparent, sun_transparent_position, scale=1.0, zorder=1)
 
 # Chargement de light_buble_transparent color
-img_path_light_bulb_grey = r'media/light_buble_transparent.png'
+img_path_light_bulb_grey = r'media/light_bulb_white_black.png'
 burj_khalifa_position = (301, 285)  # Définissez la position de la tour Burj Khalifa
 light_bulb_image = add_image_with_position(img_path_light_bulb_grey, burj_khalifa_position, zorder=2)
 
@@ -41,7 +44,7 @@ plt.axis('off')
 plt.savefig('layout.png', bbox_inches='tight', pad_inches=0)
 
 # Text annotation for light value
-light_text = plt.text(350, 400, '', ha='center', va='center', fontsize=24, color='black', fontfamily='Bebas Neue')
+light_text = plt.text(330, 400, '', ha='center', va='center', fontsize=24, color='white', fontfamily='Bebas Neue')
 
 
 # Function to format light intensity value
@@ -58,8 +61,8 @@ def format_light_value(value):
 
 # Mise à jour de la valeur aléatoire chaque seconde
 while True:
-    random_value = random.randint(0, 500)
-    x = random_value / 500
+    random_value = random.randint(0, max_value)
+    x = random_value / max_value
     light_text.set_text(format_light_value(random_value))
 
     # Supprimer l'image sun_transparent et light_bulb précédente si elles existent
