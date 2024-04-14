@@ -5,7 +5,6 @@ import math
 # Access pi constant
 pi_value = math.pi
 
-
 print("Matplotlib Version : {}".format(matplotlib.__version__))
 
 colors = [ "#f36d54", "#f6ee54", "#72c66e", "#f6ee54", "#f36d54"]

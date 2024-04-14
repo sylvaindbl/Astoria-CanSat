@@ -2,6 +2,7 @@ import matplotlib
 import random
 import math
 
+
 print("Matplotlib Version : {}".format(matplotlib.__version__))
 
 colors = ["#72c66e", "#f6ee54", "#f36d54"]
