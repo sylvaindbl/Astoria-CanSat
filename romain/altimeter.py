@@ -50,7 +50,7 @@ can_black_icon = add_image_with_position(img_path_can_black_icon, can_black_icon
 
 # Réglez la limite des axes pour s'adapter aux images
 plt.xlim(-1, 1250)
-plt.ylim(450, 2000)
+plt.ylim(450, 2200)
 
 # Désactivez les axes et affichez uniquement les images
 plt.axis('off')
@@ -96,7 +96,7 @@ rectangle = Rectangle((rectangle_x_position, rectangle_y_position), w, rectangle
 plt.gca().add_patch(rectangle)
 
 # Affichage de la valeur aléatoire à une position fixe
-random_text = plt.text(-200, 1250, f'{random_value}m', fontsize=15, ha='left', va='top', color='white')
+random_text = plt.text(-220, 1250, f'{random_value}m', fontsize=15, ha='left', va='top', color='white')
 
 # Mise à jour de la valeur aléatoire chaque seconde
 while True:
@@ -109,6 +109,7 @@ while True:
     if burj_khalifa :
         burj_khalifa.remove()
     random_value = random.randint(0, 1200)
+
     if random_value < 102:
         a = 0
         e = 0
@@ -134,7 +135,7 @@ while True:
     rectangle_height = (-(1200-random_value) / 1200 * 1170)
     rectangle.set_height(rectangle_height)
 
-    can_black_icon_position = (100, 1810 + rectangle_height)  # Définissez la position
+    can_black_icon_position = (80, 1820 + rectangle_height)  # Définissez la position
     can_black_icon = add_image_with_position(img_path_can_black_icon, can_black_icon_position, zorder=3)
 
     random_text.set_text(f'{random_value}m')
