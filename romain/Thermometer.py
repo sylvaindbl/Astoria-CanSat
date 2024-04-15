@@ -14,11 +14,11 @@ def add_image_with_positions(img_path, img_positions, zorder=0):
     return img.shape
 
 # Chargement de l'image du contour
-img_path_background = r'media/contourthermometerdarkmode.png'
+img_path_background = r'media/Thermometer/contourthermometerdarkmode.png'
 background_shape = add_image_with_positions(img_path_background, {}, zorder=2)
 
 # Chargement de l'image du jauge
-img_path_foreground = r'media/amazingjauge.png'
+img_path_foreground = r'media/Thermometer/amazingjauge.png'
 foreground_shape = add_image_with_positions(img_path_foreground, {}, zorder=0)
 
 # Nombre de graduations entre 0 et 25
@@ -60,8 +60,13 @@ random_text = plt.text(36.5, 480, f'{random_value}°C', fontsize=25, ha='left', 
 
 # Mise à jour de la valeur aléatoire chaque seconde
 while True:
-    random_value = random.randint(0, 25)
-    rectangle_height = graduation_distance * abs(random_value - 25)
+    random_value = random.randint(-10, 40)
+    if random_value <= 0 :
+        rectangle_height = 432 * 25
+    elif random_value >= 25:
+        rectangle_height = 0
+    elif 0 <= random_value <= 25 :
+        rectangle_height = graduation_distance * abs(random_value - 25)
     rectangle.set_height(rectangle_height)
     random_text.set_text(f'{random_value}°C')
     plt.pause(1)

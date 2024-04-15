@@ -5,7 +5,7 @@ import random
 
 plt.gcf().set_facecolor('black')
 
-max_value = 7000
+max_value = 63000
 
 # Fonction pour ajouter une image à une position spécifique
 def add_image_with_position(img_path, position, scale=1.0, zorder=0):
@@ -20,16 +20,16 @@ def add_image_with_position(img_path, position, scale=1.0, zorder=0):
 
 
 # Chargement de l'image de la light_bulb_grey
-img_path_background = r'media/light_bulb_grey.png'
+img_path_background = r'media/Luminosity/light_bulb_grey.png'
 background_shape = add_image_with_position(img_path_background, (301, 285), zorder=0)
 
 # Chargement de l'image sun_transparent color
-img_path_sun_transparent = r'media/sun_transparent.png'
+img_path_sun_transparent = r'media/Luminosity/sun_transparent.png'
 sun_transparent_position = (300, 400)  # Définissez la position de la tour Eiffel
 sun_transparent_image = add_image_with_position(img_path_sun_transparent, sun_transparent_position, scale=1.0, zorder=1)
 
 # Chargement de light_buble_transparent color
-img_path_light_bulb_grey = r'media/light_bulb_white_black.png'
+img_path_light_bulb_grey = r'media/Luminosity/light_bulb_white_black.png'
 burj_khalifa_position = (301, 285)  # Définissez la position de la tour Burj Khalifa
 light_bulb_image = add_image_with_position(img_path_light_bulb_grey, burj_khalifa_position, zorder=2)
 
@@ -53,6 +53,8 @@ def format_light_value(value):
         return '{:.1f} klux'.format(value / 1000)
     elif value >= 1:
         return '{:.1f} lux'.format(value)
+    elif value == 0:
+        return 'hight'.format(value)
     elif value >= 0.001:
         return '{:.1f} mlx'.format(value * 1000)
     elif value >= 0.000001:
@@ -61,15 +63,19 @@ def format_light_value(value):
 
 # Mise à jour de la valeur aléatoire chaque seconde
 while True:
-    random_value = random.randint(0, max_value)
-    x = random_value / max_value
-    light_text.set_text(format_light_value(random_value))
 
     # Supprimer l'image sun_transparent et light_bulb précédente si elles existent
     if sun_transparent_image:
         sun_transparent_image.remove()
     if light_bulb_image:
         light_bulb_image.remove()
+
+    random_value = random.randint(0, max_value)
+    if random_value != 0:
+        x = random_value / max_value
+    else :
+        x = 1
+    light_text.set_text(format_light_value(random_value))
 
     # Ajouter la nouvelle image et mettre à jour les références
     sun_transparent_image = add_image_with_position(img_path_sun_transparent, sun_transparent_position, scale=x,

@@ -16,11 +16,11 @@ def add_image_with_positions(img_path, img_positions, x=0, y=0, zorder=0):
     return img.shape
 
 # Chargement de l'image du contour
-img_path_background = r'media/humiditywaterdropcontourfinblack.png'
+img_path_background = r'media/Humidity/humiditywaterdropcontourfinblack.png'
 background_shape = add_image_with_positions(img_path_background, {}, x=-15, y=0, zorder=2)
 
 # Chargement de l'image du jauge
-img_path_foreground = r'media/humidityjauge.png'
+img_path_foreground = r'media/Humidity/humidityjauge.png'
 foreground_shape = add_image_with_positions(img_path_foreground, {}, x=-2, y=13.5, zorder=0)
 
 # Réglez la limite des axes pour s'adapter aux images

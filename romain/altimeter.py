@@ -25,26 +25,26 @@ def add_image_with_position(img_path: object, position: object, zorder: object =
 
 
 # Chargement de l'image de la jauge
-img_path_background = r'media\altimeter_all.png'
+img_path_background = r'media\Altimeter\altimeter_all.png'
 add_image_with_position(img_path_background, (0, 0), zorder=1)
 
 # Chargement de l'image atomium color
-img_path_atomium_color = r'media\atomiumcolor.png'
+img_path_atomium_color = r'media\Altimeter\atomiumcolor.png'
 atomium_color_position = (0, 0)  # Définissez la position de la tour Eiffel
 atomium_color = add_image_with_position(img_path_atomium_color, atomium_color_position, zorder=0)
 
 # Chargement de l'image Eiffel Tower color
-img_path_eiffel_tower = r'media\eiffeltowercolorgut.png'
+img_path_eiffel_tower = r'media\Altimeter\eiffeltowercolorgut.png'
 eiffel_tower_position = (0, 0)  # Définissez la position de la tour Eiffel
 eiffel_tower = add_image_with_position(img_path_eiffel_tower, eiffel_tower_position, zorder=0)
 
 # Chargement de l'image Burj Khalifa color
-img_path_burj_khalifa = r'media\burjkhalifacolorgut.png'
+img_path_burj_khalifa = r'media\Altimeter\burjkhalifacolorgut.png'
 burj_khalifa_position = (0, 0)  # Définissez la position de la tour Burj Khalifa
 burj_khalifa = add_image_with_position(img_path_burj_khalifa, burj_khalifa_position, zorder=0)
 
 # Chargement de l'image cansat black color
-img_path_can_black_icon = r'media\can_black_icon.png'
+img_path_can_black_icon = r'media\Altimeter\can_black_icon.png'
 can_black_icon_position = (200, 300 )  # Définissez la position
 can_black_icon = add_image_with_position(img_path_can_black_icon, can_black_icon_position, zorder=3)
 
